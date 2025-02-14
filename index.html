@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To My Love 💖</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(45deg, #1a1a1a, #4a004a);
+            animation: gradientShift 20s ease infinite;
+            font-family: 'Arial', cursive;
+        }
+
+        /* Starry Sky */
+        .stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite;
+        }
+
+        /* Message */
+        .message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 3em;
+            text-shadow: 0 0 10px #ff0066;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+
+        /* Music Player */
+        .music-player {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            z-index: 2;
+        }
+
+        /* Animations */
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Starry Sky -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Message -->
+    <div class="message">
+        <h1>Happy Valentine's Day, karla! 💖</h1>
+        <p>
+            You light up my world like the stars in the sky.<br>
+            Forever yours, keto
+        </p>
+    </div>
+
+    <!-- Music Player -->
+    <div class="music-player">
+        <audio controls autoplay loop>
+            <source src="https://www.youtube.com/watch?v=sElE_BfQ67s&pp=ygUTY2lnYXJyZXRzIGFmdGVyIHNleA%3D%3D" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script>
+        // Create stars
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            for (let i = 0; i < 600; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 2 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Start the magic
+        createStars();
+    </script>
+</body>
+</html>
